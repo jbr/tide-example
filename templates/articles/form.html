@@ -1,3 +1,8 @@
+{% extends "layout.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block content %}
 <form action="{{action}}" method="post">
   <div>
     <label for="title">title</label>
@@ -11,3 +16,4 @@
 
   <input type="submit"/>
 </form>
+{% endblock %}

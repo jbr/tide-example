@@ -23,6 +23,7 @@ async fn main() -> tide::Result<()> {
     tide::log::with_level(tide::log::LevelFilter::Info);
 
     let mut app = tide::with_state(State::new().await?);
+    app.at("/").get(tide::Redirect::new("/welcome"));
 
     app.at("/welcome").get(routes::welcome);
 
@@ -38,7 +39,8 @@ async fn main() -> tide::Result<()> {
         .at("/:article_id")
         .get(routes::articles::show)
         .delete(routes::articles::delete)
-        .put(routes::articles::update);
+        .put(routes::articles::update)
+        .post(routes::articles::update);
 
     app.listen("127.0.0.1:8000").await?;
     Ok(())

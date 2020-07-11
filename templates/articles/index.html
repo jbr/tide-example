@@ -1,6 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block content %}
 <h1>Articles</h1>
+
 <ul>
-{% for article in articles %}
-   <li><a href="/articles/{{article.id}}">{{article.title}}</a></li>
-{% endfor %}
+  {% for article in articles %}
+  <li>
+    <a href="/articles/{{article.id}}">
+      {{article.title}}
+    </a>
+  </li>
+  {% endfor %}
 </ul>
+
+<a href="/articles/new">new article</a>
+{% endblock %}
