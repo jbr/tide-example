@@ -23,12 +23,6 @@ pub struct PartialArticle {
     pub title: Option<String>,
 }
 
-#[derive(Debug, Deserialize, Serialize, Default)]
-pub struct ArticleValidation {
-    pub text_errors: Vec<String>,
-    pub title_errors: Vec<String>,
-}
-
 impl PartialArticle {
     pub fn update_by_id(&self, id: i64) -> Query {
         sqlx::query(
