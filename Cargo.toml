@@ -9,10 +9,7 @@ publish = false
 async-std = { version = "1.6", features = ["attributes"]}
 tide = "*"
 sqlx = { version = "0.3.5", features = ["sqlite", "chrono"] }
-askama = { version = "0.10.1", features = ["with-tide"] }
+askama = { version = "0.10.2", features = ["with-tide"] }
 serde = "1.0.114"
 serde_urlencoded = "0.6.1"
-askama_tide = { git = "https://github.com/jbr/askama", branch = "tide" }
-
-[patch.crates-io]
-askama = { git = "https://github.com/jbr/askama", branch = "tide" }
+askama_tide = "0.10.0"

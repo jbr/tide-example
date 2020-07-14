@@ -87,8 +87,9 @@ checksum = "85bb70cc08ec97ca5450e6eba421deeea5f172c0fc61f78b5357b2a8e8be195f"
 
 [[package]]
 name = "askama"
-version = "0.10.1"
-source = "git+https://github.com/jbr/askama?branch=tide#d87e80be817f76fbd85d669b1e1d0330c2f07e02"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b7acc25b09d27eaec97794c58d8483a227f2adc98b762f915745525d8781dba0"
 dependencies = [
  "askama_derive",
  "askama_escape",
@@ -97,8 +98,9 @@ dependencies = [
 
 [[package]]
 name = "askama_derive"
-version = "0.10.0"
-source = "git+https://github.com/jbr/askama?branch=tide#d87e80be817f76fbd85d669b1e1d0330c2f07e02"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6f7dc4c28f064af8bbba24867ec6c3165c645635cb1306bca4c0f991ce8b15a9"
 dependencies = [
  "askama_shared",
  "proc-macro2",
@@ -109,12 +111,14 @@ dependencies = [
 [[package]]
 name = "askama_escape"
 version = "0.10.1"
-source = "git+https://github.com/jbr/askama?branch=tide#d87e80be817f76fbd85d669b1e1d0330c2f07e02"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "90c108c1a94380c89d2215d0ac54ce09796823cca0fd91b299cfff3b33e346fb"
 
 [[package]]
 name = "askama_shared"
-version = "0.10.2"
-source = "git+https://github.com/jbr/askama?branch=tide#d87e80be817f76fbd85d669b1e1d0330c2f07e02"
+version = "0.10.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5b64d552e0dc2837d5c27276e80521cf864f42c079e476b3035a196566fcee59"
 dependencies = [
  "askama_escape",
  "humansize",
@@ -130,8 +134,9 @@ dependencies = [
 
 [[package]]
 name = "askama_tide"
-version = "0.1.0"
-source = "git+https://github.com/jbr/askama?branch=tide#d87e80be817f76fbd85d669b1e1d0330c2f07e02"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "26a1b8bd783141bf3b40ae175244d23b9fea08bd3ec2e862d01c9da0863b6444"
 dependencies = [
  "askama",
  "async-std",
@@ -1010,9 +1015,9 @@ checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 
 [[package]]
 name = "pkg-config"
-version = "0.3.17"
+version = "0.3.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05da548ad6865900e60eaba7f589cc0783590a92e940c26953ff81ddbab2d677"
+checksum = "d36492546b6af1463394d46f0c834346f31548646f6ba10849802c9c9a27ac33"
 
 [[package]]
 name = "polyval"
@@ -1394,9 +1399,9 @@ dependencies = [
 
 [[package]]
 name = "stable_deref_trait"
-version = "1.1.1"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dba1a27d3efae4351c8051072d619e3ade2820635c3958d826bfea39d59b54c8"
+checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 
 [[package]]
 name = "standback"
@@ -1470,9 +1475,9 @@ checksum = "502d53007c02d7605a05df1c1a73ee436952781653da5d0bf57ad608f66932c1"
 
 [[package]]
 name = "syn"
-version = "1.0.33"
+version = "1.0.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e8d5d96e8cbb005d6959f119f773bfaebb5684296108fb32600c00cde305b2cd"
+checksum = "936cae2873c940d92e697597c5eee105fb570cd5689c695806f672883653349b"
 dependencies = [
  "proc-macro2",
  "quote",
