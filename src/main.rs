@@ -27,20 +27,7 @@ async fn main() -> tide::Result<()> {
 
     app.at("/welcome").get(routes::welcome);
 
-    let mut articles = app.at("/articles");
-
-    articles
-        .post(routes::articles::create)
-        .get(routes::articles::index);
-
-    articles.at("/new").get(routes::articles::new);
-
-    articles
-        .at("/:article_id")
-        .get(routes::articles::show)
-        .delete(routes::articles::delete)
-        .put(routes::articles::update)
-        .post(routes::articles::update);
+    routes::articles::mount(app.at("/articles"));
 
     app.listen("127.0.0.1:8000").await?;
     Ok(())

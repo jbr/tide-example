@@ -58,3 +58,16 @@ pub async fn new(_request: crate::Request) -> tide::Result {
     let article = PartialArticle::default();
     Ok(ArticleForm::for_partial_article(&article).into())
 }
+
+pub fn mount<'a>(mut route: tide::Route<'a, crate::State>) {
+    route.post(create).get(index);
+
+    route.at("/new").get(new);
+
+    route
+        .at("/:article_id")
+        .get(show)
+        .delete(delete)
+        .put(update)
+        .post(update);
+}
