@@ -16,5 +16,3 @@ askama_tide = { git = "https://github.com/jbr/askama", branch = "tide" }
 
 [patch.crates-io]
 askama = { git = "https://github.com/jbr/askama", branch = "tide" }
-http-types = { git = "https://github.com/jbr/http-types", branch = "body-set-mime" }
-tide = { git = "https://github.com/http-rs/tide" }

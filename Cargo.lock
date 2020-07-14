@@ -149,17 +149,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "async-channel"
-version = "1.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ee81ba99bee79f3c8ae114ae4baa7eaa326f63447cf2ec65e4393618b63f8770"
-dependencies = [
- "concurrent-queue",
- "event-listener",
- "futures-core",
-]
-
-[[package]]
 name = "async-h1"
 version = "2.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -189,11 +178,10 @@ dependencies = [
 
 [[package]]
 name = "async-sse"
-version = "4.0.0"
+version = "3.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "885fb340b166aff3a3b16dd49ef169d8ee34428aa10c0432c61fff584aa222b9"
+checksum = "aff0a3074c2c3cfd76417f6e03d5c99822d3ef37387af891e4a8bf46447ca870"
 dependencies = [
- "async-channel",
  "async-std",
  "http-types",
  "log",
@@ -508,12 +496,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "event-listener"
-version = "2.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "699d84875f1b72b4da017e6b0f77dfa88c0137f089958a88974d15938cbc2976"
-
-[[package]]
 name = "fake-simd"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -739,8 +721,9 @@ dependencies = [
 
 [[package]]
 name = "http-types"
-version = "2.2.1"
-source = "git+https://github.com/jbr/http-types?branch=body-set-mime#510b182a642efbd31abb371888efb5000005d506"
+version = "2.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4bc341c4b7a71eb0d85c760dc7363648b82ecc38fa5ead50f69b52858df708b9"
 dependencies = [
  "anyhow",
  "async-std",
@@ -838,16 +821,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "14b6052be84e6b71ab17edffc2eeabf5c2c3ae1fdb464aae35ac50c67a44e1f7"
 dependencies = [
  "cfg-if",
-]
-
-[[package]]
-name = "logtest"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eb3e43a8657c1d64516dcc9db8ca03826a4aceaf89d5ce1b37b59f6ff0e43026"
-dependencies = [
- "lazy_static",
- "log",
 ]
 
 [[package]]
@@ -1157,9 +1130,9 @@ dependencies = [
 
 [[package]]
 name = "route-recognizer"
-version = "0.2.0"
+version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "56770675ebc04927ded3e60633437841581c285dc6236109ea25fbf3beb7b59e"
+checksum = "ea509065eb0b3c446acdd0102f0d46567dc30902dc0be91d6552035d92b0f4f8"
 
 [[package]]
 name = "rustc-demangle"
@@ -1552,7 +1525,8 @@ dependencies = [
 [[package]]
 name = "tide"
 version = "0.11.0"
-source = "git+https://github.com/http-rs/tide#377870615569ac01fbee589c01d69091a8c76de3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "151b07f369a9152c2f93715ea0db8a7f7e2533bd2e52fbff1ea5bad7a88db541"
 dependencies = [
  "async-h1",
  "async-sse",
@@ -1560,7 +1534,6 @@ dependencies = [
  "femme",
  "http-types",
  "kv-log-macro",
- "logtest",
  "route-recognizer",
  "serde",
  "serde_json",
