@@ -48,6 +48,8 @@ pub async fn create(mut request: crate::Request) -> tide::Result {
 
     if created == 1 {
         let (last_id,) = Article::last_id().fetch_one(&mut tx).await?;
+        tx.commit().await?;
+
         Ok(tide::Redirect::new(format!("/articles/{}", last_id)).into())
     } else {
         Ok(ArticleForm::for_partial_article(&article).into())
