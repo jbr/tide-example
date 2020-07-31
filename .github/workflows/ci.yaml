@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
 
 env:
   RUSTFLAGS: -Dwarnings
@@ -19,7 +19,7 @@ jobs:
         rust: [stable, nightly]
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
 
     - name: Install ${{ matrix.rust }}
       uses: actions-rs/toolchain@v1
@@ -50,7 +50,7 @@ jobs:
     name: Checking fmt, clippy, and docs
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
 
     - uses: actions-rs/toolchain@v1
       with:
