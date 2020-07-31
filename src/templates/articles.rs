@@ -18,13 +18,13 @@ impl<'a> ArticleForm<'a> {
         }
     }
 
-    pub fn for_article(article: &'a Article) -> Self {
-        Self {
-            title: &article.title,
-            text: &article.text,
-            action: format!("/articles/{}", article.id),
-        }
-    }
+    // pub fn for_article(article: &'a Article) -> Self {
+    //     Self {
+    //         title: &article.title,
+    //         text: &article.text,
+    //         action: format!("/articles/{}", article.id),
+    //     }
+    // }
 }
 
 #[derive(Template)]

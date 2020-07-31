@@ -65,7 +65,7 @@ impl Article {
         sqlx::query("DELETE FROM articles WHERE id = ?").bind(id)
     }
 
-    pub fn update(&self, partial: PartialArticle) -> Query {
-        partial.update_by_id(self.id)
-    }
+    // pub fn update(&self, partial: PartialArticle) -> Query {
+    //     partial.update_by_id(self.id)
+    // }
 }
