@@ -1,29 +1,48 @@
+use async_sqlx_session::SqliteSessionStore;
+use sqlx::sqlite::SqlitePool;
+use std::{env, time::Duration};
+use tide::{sessions::SessionMiddleware, Redirect};
+
 pub mod records;
 mod templates;
 
 mod routes;
 mod utils;
 
+#[derive(Clone)]
 pub struct State {
-    db: sqlx::sqlite::SqlitePool,
-}
-
-impl State {
-    async fn new() -> tide::Result<Self> {
-        let database_url = std::env::var("DATABASE_URL")?;
-        let db = sqlx::sqlite::SqlitePool::new(&database_url).await?;
-        Ok(Self { db })
-    }
+    db: SqlitePool,
 }
 
 pub type Request = tide::Request<State>;
 
+async fn db_connection() -> tide::Result<SqlitePool> {
+    let database_url = env::var("DATABASE_URL")?;
+    Ok(SqlitePool::new(&database_url).await?)
+}
+
+async fn build_session_middleware(
+    db: SqlitePool,
+) -> tide::Result<SessionMiddleware<SqliteSessionStore>> {
+    let session_store = SqliteSessionStore::from_client(db);
+    session_store.migrate().await?;
+    session_store.spawn_cleanup_task(Duration::from_secs(60 * 15));
+    let session_secret = env::var("TIDE_SECRET").unwrap();
+    Ok(SessionMiddleware::new(
+        session_store,
+        session_secret.as_bytes(),
+    ))
+}
+
 #[async_std::main]
 async fn main() -> tide::Result<()> {
     tide::log::with_level(tide::log::LevelFilter::Info);
+    let db = db_connection().await?;
+    let mut app = tide::with_state(State { db: db.clone() });
 
-    let mut app = tide::with_state(State::new().await?);
-    app.at("/").get(tide::Redirect::new("/welcome"));
+    app.with(build_session_middleware(db).await?);
+
+    app.at("/").get(Redirect::new("/welcome"));
 
     app.at("/welcome").get(routes::welcome);
 
