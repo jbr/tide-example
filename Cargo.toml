@@ -13,7 +13,7 @@ askama = { version = "0.10", features = ["with-tide"] }
 serde = "1.0.114"
 serde_urlencoded = "0.6.1"
 askama_tide = "0.10"
-async-sqlx-session = { version = "0.1.1", features = ["sqlite"] }
+async-sqlx-session = { version = "0.2.0", features = ["sqlite"] }
 
 [patch.crates-io]
 askama_tide = { git = "https://github.com/jbr/askama", branch = "update-tide-to-0.13" }
