@@ -10,7 +10,7 @@ async-std = { version = "1.6", features = ["attributes"]}
 tide = "*"
 sqlx = { version = "0.3.5", features = ["sqlite", "chrono"] }
 askama = { version = "0.10", features = ["with-tide"] }
-serde = "1.0.115"
+serde = "1.0.116"
 serde_urlencoded = "0.7.0"
 askama_tide = "0.10"
 async-sqlx-session = { version = "0.2.0", features = ["sqlite"] }
