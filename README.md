@@ -11,22 +11,40 @@ Current crate choices include:
 * [sqlx](https://github.com/launchbadge/sqlx) with sqlite as a datastore
 * [askama](https://github.com/djc/askama) as a html template engine
 
-# Running it
+## Running this repository locally
 
-You need to add two environment variables to try this out:
+You need to add two environment variables to run this application,
+`DATABASE_URL` and `TIDE_SECRET`.
 
-``` bash
-export DATABASE_URL="sqlite::memory"
-export TIDE_SECRET="..."
+### Database setup
+
+This application is built on the [sqlite
+database](https://www.sqlite.org/), and accepts database urls of the
+form `"sqlite:///path/to/sqlite.db"`.
+
+This repository does yet not use migrations. In order to set up the database, run
+```bash
+$ sqlite3 db/sqlite3.db < db/schema.sql
 ```
 
-The `TIDE_SECRET` needs to be a 32byte key, an easy way to generate it is:
+You will also need to add `DATABASE_URL` to your environment. We
+recommend using [`direnv`](https://direnv.net/), and include an
+example .envrc.
 
 ``` bash
-export TIDE_SECRET=`date|md5`
+export DATABASE_URL="sqlite://./db/sqlite3.db"
 ```
 
-After doing this, you can do:
+### Sessions
+The `TIDE_SECRET` needs to be a cryptographically random key of at
+least 32 bytes in your execution environment. An easy way to generate
+it is:
+
+``` bash
+$ openssl rand -base64 64
+```
+
+### Running the app
 
 ``` bash
 cargo run

@@ -1,0 +1,2 @@
+export DATABASE_URL="sqlite://./db/sqlite3.db"
+export TIDE_SECRET=""
