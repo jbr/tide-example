@@ -11,6 +11,27 @@ Current crate choices include:
 * [sqlx](https://github.com/launchbadge/sqlx) with sqlite as a datastore
 * [askama](https://github.com/djc/askama) as a html template engine
 
+# Running it
+
+You need to add two environment variables to try this out:
+
+``` bash
+export DATABASE_URL="sqlite::memory"
+export TIDE_SECRET="..."
+```
+
+The `TIDE_SECRET` needs to be a 32byte key, an easy way to generate it is:
+
+``` bash
+export TIDE_SECRET=`date|md5`
+```
+
+After doing this, you can do:
+
+``` bash
+cargo run
+```
+
 # Contributing
 
 Pull requests and fork variants very welcome. Any variants that aren't
