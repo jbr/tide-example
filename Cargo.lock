@@ -130,9 +130,9 @@ dependencies = [
 
 [[package]]
 name = "askama_tide"
-version = "0.11.0"
+version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7d5f488ca7622712a97b1fa7daeddae6e01a528ba985aab2310d78ab56eedce3"
+checksum = "89c2dfe6944c74cf33ad53fbc6bdb5ae4afdb8f47420045e3bc07fcfabbe3eaa"
 dependencies = [
  "askama",
  "async-std",
