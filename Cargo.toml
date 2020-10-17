@@ -7,10 +7,13 @@ publish = false
 
 [dependencies]
 async-std = { version = "1.6.5", features = ["attributes"] }
-tide = "0.13.0"
+tide = "0.14.0"
 sqlx = { version = "0.3.5", features = ["sqlite", "chrono"] }
 askama = { version = "0.10.3", features = ["with-tide"] }
 serde = "1.0.117"
 serde_urlencoded = "0.7.0"
-askama_tide = "0.11.1"
+askama_tide = "0.11.2"
 async-sqlx-session = { version = "0.2.0", features = ["sqlite"] }
+[patch.crates-io]
+askama_tide = { git = "https://github.com/jbr/askama", branch = "tide-v0.14" }
+askama = { git = "https://github.com/jbr/askama", branch = "tide-v0.14" }
