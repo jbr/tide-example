@@ -9,7 +9,7 @@ pub async fn index(request: crate::Request) -> tide::Result {
 }
 
 pub async fn show(request: crate::Request) -> tide::Result {
-    let article = Article::find_by_id(request.param("article_id")?)
+    let article = Article::find_by_id(request.param("article_id")?.parse()?)
         .fetch_one(&request.state().db)
         .await?;
 
@@ -17,7 +17,7 @@ pub async fn show(request: crate::Request) -> tide::Result {
 }
 
 pub async fn delete(request: crate::Request) -> tide::Result {
-    Article::delete_by_id(request.param("article_id")?)
+    Article::delete_by_id(request.param("article_id")?.parse()?)
         .execute(&request.state().db)
         .await?;
 
@@ -27,7 +27,7 @@ pub async fn delete(request: crate::Request) -> tide::Result {
 
 pub async fn update(mut request: crate::Request) -> tide::Result {
     let article: PartialArticle = utils::deserialize_body(&mut request).await?;
-    let article_id = request.param("article_id")?;
+    let article_id = request.param("article_id")?.parse()?;
     let rows_updated = article
         .update_by_id(article_id)
         .execute(&request.state().db)
