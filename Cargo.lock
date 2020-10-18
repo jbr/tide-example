@@ -84,7 +84,8 @@ checksum = "cff77d8686867eceff3105329d4698d96c2391c176d5d03adc90c7389162b5b8"
 [[package]]
 name = "askama"
 version = "0.10.3"
-source = "git+https://github.com/jbr/askama?branch=tide-v0.14#1661a3388b904a96e423077707002e347a17485d"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "70a6e7ebd44d0047fd48206c83c5cd3214acc7b9d87f001da170145c47ef7d12"
 dependencies = [
  "askama_derive",
  "askama_escape",
@@ -94,7 +95,8 @@ dependencies = [
 [[package]]
 name = "askama_derive"
 version = "0.10.3"
-source = "git+https://github.com/jbr/askama?branch=tide-v0.14#1661a3388b904a96e423077707002e347a17485d"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e1d7169690c4f56343dcd821ab834972a22570a2662a19a84fd7775d5e1c3881"
 dependencies = [
  "askama_shared",
  "proc-macro2",
@@ -105,12 +107,14 @@ dependencies = [
 [[package]]
 name = "askama_escape"
 version = "0.10.1"
-source = "git+https://github.com/jbr/askama?branch=tide-v0.14#1661a3388b904a96e423077707002e347a17485d"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "90c108c1a94380c89d2215d0ac54ce09796823cca0fd91b299cfff3b33e346fb"
 
 [[package]]
 name = "askama_shared"
 version = "0.10.4"
-source = "git+https://github.com/jbr/askama?branch=tide-v0.14#1661a3388b904a96e423077707002e347a17485d"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "62fc272363345c8cdc030e4c259d9d028237f8b057dc9bb327772a257bde6bb5"
 dependencies = [
  "askama_escape",
  "humansize",
@@ -127,7 +131,8 @@ dependencies = [
 [[package]]
 name = "askama_tide"
 version = "0.11.2"
-source = "git+https://github.com/jbr/askama?branch=tide-v0.14#1661a3388b904a96e423077707002e347a17485d"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fc33aa55416780ae3a9c5bfe3501fde0b992cccbb2c3c9e64d88a0764e151300"
 dependencies = [
  "askama",
  "tide",
