@@ -129,12 +129,12 @@ dependencies = [
 
 [[package]]
 name = "askama_tide"
-version = "0.11.2"
+version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fc33aa55416780ae3a9c5bfe3501fde0b992cccbb2c3c9e64d88a0764e151300"
+checksum = "0fc1d531a033ac83a91003f2e83fb2d3718af4c0e14acfa825197667c6c327eb"
 dependencies = [
  "askama",
- "tide",
+ "tide 0.15.0",
 ]
 
 [[package]]
@@ -1028,7 +1028,7 @@ checksum = "db65c6da02e61f55dae90a0ae427b2a5f6b3e8db09f58d10efab23af92592616"
 dependencies = [
  "arrayvec",
  "bitflags",
- "cfg-if",
+ "cfg-if 0.1.10",
  "ryu",
  "static_assertions",
 ]
@@ -1791,6 +1791,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "tide"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c832ca099a0645f6446b6c8900b09e3b76978dedc0d7383438698b32ff07f734"
+dependencies = [
+ "async-sse",
+ "async-std",
+ "async-trait",
+ "futures-util",
+ "http-client",
+ "http-types",
+ "kv-log-macro",
+ "log",
+ "pin-project-lite 0.1.10",
+ "route-recognizer",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "tide-example"
 version = "0.1.0"
 dependencies = [
@@ -1801,7 +1821,7 @@ dependencies = [
  "serde",
  "serde_urlencoded",
  "sqlx",
- "tide",
+ "tide 0.14.0",
 ]
 
 [[package]]

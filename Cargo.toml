@@ -12,5 +12,5 @@ sqlx = { version = "0.3.5", features = ["sqlite", "chrono"] }
 askama = { version = "0.10.5", features = ["with-tide"] }
 serde = "1.0.117"
 serde_urlencoded = "0.7.0"
-askama_tide = "0.11.2"
+askama_tide = "0.12.0"
 async-sqlx-session = { version = "0.2.0", features = ["sqlite"] }
