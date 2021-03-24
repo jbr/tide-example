@@ -134,7 +134,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "12d2cbee67c51e2d2a33fa1988b2416688ffb1428025806a0ca0337d7df4e5da"
 dependencies = [
  "askama",
- "tide 0.16.0",
+ "tide",
 ]
 
 [[package]]
@@ -156,6 +156,16 @@ dependencies = [
  "concurrent-queue",
  "event-listener",
  "futures-core",
+]
+
+[[package]]
+name = "async-dup"
+version = "1.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7427a12b8dc09291528cfb1da2447059adb4a257388c2acd6497a79d55cf6f7c"
+dependencies = [
+ "futures-io",
+ "simple-mutex",
 ]
 
 [[package]]
@@ -190,10 +200,12 @@ dependencies = [
 
 [[package]]
 name = "async-h1"
-version = "2.1.3"
+version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be805a675002e0918f7f85d72add747fcb69132d86b731bcf1f0626a2661241c"
+checksum = "cc5142de15b549749cce62923a50714b0d7b77f5090ced141599e78899865451"
 dependencies = [
+ "async-channel",
+ "async-dup",
  "async-std",
  "byte-pool",
  "futures-core",
@@ -201,7 +213,7 @@ dependencies = [
  "httparse",
  "lazy_static",
  "log",
- "pin-project-lite 0.1.10",
+ "pin-project 1.0.5",
 ]
 
 [[package]]
@@ -777,9 +789,9 @@ dependencies = [
 
 [[package]]
 name = "futures-core"
-version = "0.3.6"
+version = "0.3.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d674eaa0056896d5ada519900dbf97ead2e46a7b6621e8160d79e2f2e1e2784b"
+checksum = "15496a72fabf0e62bdc3df11a59a3787429221dd0710ba8ef163d6f7a9112c94"
 
 [[package]]
 name = "futures-executor"
@@ -853,7 +865,7 @@ dependencies = [
  "futures-sink",
  "futures-task",
  "memchr",
- "pin-project",
+ "pin-project 0.4.27",
  "pin-utils",
  "proc-macro-hack",
  "proc-macro-nested",
@@ -1250,7 +1262,16 @@ version = "0.4.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2ffbc8e94b38ea3d2d8ba92aea2983b503cd75d0888d75b86bb37970b5698e15"
 dependencies = [
- "pin-project-internal",
+ "pin-project-internal 0.4.27",
+]
+
+[[package]]
+name = "pin-project"
+version = "1.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96fa8ebb90271c4477f144354485b8068bd8f6b78b428b01ba892ca26caf0b63"
+dependencies = [
+ "pin-project-internal 1.0.5",
 ]
 
 [[package]]
@@ -1258,6 +1279,17 @@ name = "pin-project-internal"
 version = "0.4.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "65ad2ae56b6abe3a1ee25f15ee605bacadb9a764edaba9c2bf4103800d4a1895"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "pin-project-internal"
+version = "1.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "758669ae3558c6f74bd2a18b41f7ac0b5a195aea6639d6a9b5e5d1ad5ba24c0b"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1590,6 +1622,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "simple-mutex"
+version = "1.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "38aabbeafa6f6dead8cebf246fe9fae1f9215c8d29b3a69f93bd62a9e4a3dcd6"
+dependencies = [
+ "event-listener",
+]
+
+[[package]]
 name = "slab"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1804,9 +1845,9 @@ dependencies = [
 
 [[package]]
 name = "tide"
-version = "0.15.0"
+version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c832ca099a0645f6446b6c8900b09e3b76978dedc0d7383438698b32ff07f734"
+checksum = "c459573f0dd2cc734b539047f57489ea875af8ee950860ded20cf93a79a1dee0"
 dependencies = [
  "async-h1",
  "async-session",
@@ -1814,26 +1855,6 @@ dependencies = [
  "async-std",
  "async-trait",
  "femme",
- "futures-util",
- "http-client",
- "http-types",
- "kv-log-macro",
- "log",
- "pin-project-lite 0.1.10",
- "route-recognizer",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "tide"
-version = "0.16.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c459573f0dd2cc734b539047f57489ea875af8ee950860ded20cf93a79a1dee0"
-dependencies = [
- "async-sse",
- "async-std",
- "async-trait",
  "futures-util",
  "http-client",
  "http-types",
@@ -1856,7 +1877,7 @@ dependencies = [
  "serde",
  "serde_urlencoded",
  "sqlx",
- "tide 0.15.0",
+ "tide",
 ]
 
 [[package]]
