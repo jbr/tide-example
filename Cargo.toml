@@ -9,7 +9,7 @@ publish = false
 async-std = { version = "1.10.0", features = ["attributes"] }
 tide = "0.16.0"
 sqlx = { version = "0.3.5", features = ["sqlite", "chrono"] }
-askama = { version = "0.11.0", features = ["with-tide"] }
+askama = { version = "0.11.1", features = ["with-tide"] }
 serde = "1.0.134"
 serde_urlencoded = "0.7.1"
 askama_tide = "0.14.0"
