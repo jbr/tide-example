@@ -1,7 +1,8 @@
 # Tide Example Application
 
 This application is intended to eventually represent best practices in
-developing a tide application. The actual features are modeled closely
+developing a [tide](https://github.com/http-rs/tide) application.
+The actual features are modeled closely
 after [the ruby on rails getting
 started](https://guides.rubyonrails.org/getting_started.html)
 tutorial, with the intent that when this application is succinct and
